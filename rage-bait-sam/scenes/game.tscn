@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bqjxr2aaxqcoy"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_82oti"]
+distance = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82oti"]
+height = 28.0
+
+[node name="Game" type="Node2D" unique_id=1706429697]
+
+[node name="Boundaries" type="Node2D" parent="." unique_id=525761292]
+
+[node name="Left Boundary" type="StaticBody2D" parent="Boundaries" unique_id=1196850233]
+position = Vector2(-101, -113)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left Boundary" unique_id=780074746]
+position = Vector2(102, 114)
+rotation = 1.569391
+shape = SubResource("WorldBoundaryShape2D_82oti")
+
+[node name="Bottom Boundary" type="StaticBody2D" parent="Boundaries" unique_id=1844014916]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Bottom Boundary" unique_id=50998950]
+position = Vector2(111, 119)
+shape = SubResource("WorldBoundaryShape2D_82oti")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=259883957]
+z_index = 5
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1141685646]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=868755815]
+position = Vector2(50, 0)
+shape = SubResource("CapsuleShape2D_82oti")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1089519760]
